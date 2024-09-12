@@ -14,5 +14,8 @@ namespace msftconnect.Controllers
 
         [HttpGet, Route("/connecttest.txt")]
         public ContentResult GetConnect() => this.Content(configuration["Connecttest"] ?? "Microsoft Connect Test", "text/plain");
+
+        [HttpGet, Route("/generate_204")]
+        public NotFoundObjectResult GetGenerate() => this.NotFound(configuration["Generate"] ?? "generate_204");
     }
 }
